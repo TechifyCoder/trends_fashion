@@ -1,6 +1,5 @@
 "use client"
 
-import { useRef } from "react"
 import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
 
@@ -55,7 +54,7 @@ const COLLECTIONS = [
 ]
 
 export default function Collections() {
-  const scrollToCategory = (categoryId: string) => {
+  const scrollToCategory = () => {
     document.getElementById("catalog")?.scrollIntoView({ behavior: "smooth" })
   }
 

@@ -1,9 +1,8 @@
 "use client"
 
-import { useState, useEffect, useRef } from "react"
-import Link from "next/link"
+import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Menu, X, Sparkles } from "lucide-react"
+import { Sparkles } from "lucide-react"
 
 const NAV_LINKS = [
   { href: "#home", label: "Home" },

@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useCallback } from "react"
+import Image from "next/image"
 import { motion, AnimatePresence } from "framer-motion"
 import { Sparkles, RotateCcw, Copy, MessageCircle, AlertCircle, X } from "lucide-react"
 import { useTryOnStore } from "@/hooks/useTryOn"
@@ -242,9 +243,11 @@ export default function VirtualTryOn() {
                               <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-transparent transition-all duration-200"
                                 style={selectedModel === avatar.id ? { borderColor: "#C9A96E" } : {}}
                               >
-                                <img
+                                <Image
                                   src={avatar.image}
                                   alt={avatar.label}
+                                  width={40}
+                                  height={40}
                                   className="w-full h-full object-cover object-top"
                                 />
                               </div>

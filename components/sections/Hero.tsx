@@ -56,21 +56,21 @@ export default function Hero() {
 
       {/* Floating geometric diamonds */}
       <div className="absolute inset-0 z-[2] pointer-events-none overflow-hidden">
-        {[
-          { top: "18%", left: "5%", size: 20, delay: "0s", dur: "6s", opacity: 0.2 },
-          { top: "65%", left: "8%", size: 12, delay: "1s", dur: "8s", opacity: 0.15 },
-          { top: "30%", right: "6%", size: 16, delay: "0.5s", dur: "10s", opacity: 0.18 },
-          { top: "70%", right: "10%", size: 24, delay: "2s", dur: "7s", opacity: 0.12 },
-          { top: "45%", left: "2%", size: 10, delay: "3s", dur: "9s", opacity: 0.16 },
-          { top: "12%", right: "15%", size: 14, delay: "1.5s", dur: "11s", opacity: 0.14 },
-        ].map((s, i) => (
+        {([
+          { top: "18%", left: "5%", right: undefined, size: 20, delay: "0s", dur: "6s", opacity: 0.2 },
+          { top: "65%", left: "8%", right: undefined, size: 12, delay: "1s", dur: "8s", opacity: 0.15 },
+          { top: "30%", left: undefined, right: "6%", size: 16, delay: "0.5s", dur: "10s", opacity: 0.18 },
+          { top: "70%", left: undefined, right: "10%", size: 24, delay: "2s", dur: "7s", opacity: 0.12 },
+          { top: "45%", left: "2%", right: undefined, size: 10, delay: "3s", dur: "9s", opacity: 0.16 },
+          { top: "12%", left: undefined, right: "15%", size: 14, delay: "1.5s", dur: "11s", opacity: 0.14 },
+        ] as const).map((s, i) => (
           <div
             key={i}
             className="absolute border border-[#C9A96E] rotate-45"
             style={{
               top: s.top,
-              left: "left" in s ? (s as Record<string, string>).left : undefined,
-              right: "right" in s ? (s as Record<string, string>).right : undefined,
+              left: s.left,
+              right: s.right,
               width: s.size,
               height: s.size,
               opacity: s.opacity,

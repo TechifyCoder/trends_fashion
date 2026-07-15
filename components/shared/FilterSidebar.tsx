@@ -1,8 +1,6 @@
 "use client"
 
-import { useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import { X, SlidersHorizontal, ChevronDown } from "lucide-react"
+import { X, SlidersHorizontal } from "lucide-react"
 import { useProductStore } from "@/hooks/useProducts"
 import { FABRICS, OCCASIONS, ALL_COLORS } from "@/lib/products"
 
