@@ -1,6 +1,6 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { motion, type Variants } from "framer-motion"
 import { ArrowRight } from "lucide-react"
 
 const COLLECTIONS = [
@@ -63,9 +63,9 @@ export default function Collections() {
     visible: { transition: { staggerChildren: 0.15 } },
   }
 
-  const cardVariants = {
+  const cardVariants: Variants = {
     hidden: { opacity: 0, y: 60 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] } },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } },
   }
 
   return (
@@ -117,7 +117,7 @@ export default function Collections() {
               key={col.id}
               variants={cardVariants}
               className="group relative overflow-hidden rounded-3xl cursor-pointer min-h-80"
-              onClick={() => scrollToCategory(col.id)}
+              onClick={() => scrollToCategory()}
               id={`collection-card-${col.id}`}
             >
               {/* Background gradient + textile pattern */}
